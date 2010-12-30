@@ -170,6 +170,9 @@ augroup NERDTree
     exec "autocmd BufWinLeave ". s:NERDTreeBufName ."* call <SID>saveScreenState()"
     exec "autocmd TabLeave ". s:NERDTreeBufName ."* call <SID>saveScreenState()"
     exec "autocmd TabEnter ". s:NERDTreeBufName ."* call <SID>syncMirrorTreeScreenState()"
+
+    "disallow insert mode in the NERDTree
+    exec "autocmd BufEnter ". s:NERDTreeBufName ."* stopinsert"
     "cache bookmarks when vim loads
     autocmd VimEnter * call s:Bookmark.CacheBookmarks(0)
 
